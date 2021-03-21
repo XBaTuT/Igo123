@@ -1,0 +1,43 @@
+﻿@page
+@using Igo123.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container w-50">
+    <form method="POST">
+        <div class="form-group">
+            <label asp-for="UserModel.Surname"></label>
+            <input type="text" asp-for="UserModel.Surname" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Name"></label>
+            <input type="text" asp-for="UserModel.Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.MiddleName"></label>
+            <input type="text" asp-for="UserModel.MiddleName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Birthday"></label>
+            <input type="text" asp-for="UserModel.Birthday" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.City"></label>
+            <input type="text" asp-for="UserModel.City" class="form-control" />
+        </div>
+         <div class="form-group">
+            <label asp-for="UserModel.Gender"></label>
+            <select asp-for="UserModel.Gender" class="form-control" asp-items="@Html.GetEnumSelectList<Gender>()"></select>
+        </div>
+        <div class="form-group">
+            <label asp-for="UserModel.Phone"></label>
+            <input type="text" asp-for="UserModel.Phone" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div>
